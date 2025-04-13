@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Container with Buttons</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: rgb(174, 240, 240); /* Light blue background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full height of the viewport */
+        }
+
+        .button-container {
+            background-color: rgba(255, 255, 255, 0.9); /* White container */
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adds depth */
+            text-align: center;
+            width: 300px;
+        }
+
+        .button-container button {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #4CAF50; /* Green button */
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button-container button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <button>Login</button>
+        <button>Sign Up</button>
+    </div>
+</body>
+</html>

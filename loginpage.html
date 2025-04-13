@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two-Column Layout with Login</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: rgb(174, 240, 240);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; 
+        }
+
+        .main-container {
+            display: flex;
+            width: 70%; 
+            max-width: 800px; 
+            height: auto; 
+            background-color: rgb(200, 230, 250);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+
+        .image-container {
+            margin: 20px;
+            flex: 1;
+            background: url('your-image.jpg') no-repeat center center;
+            background-size: cover; 
+        }
+
+        .login-container {
+            flex: 1;
+            background-color: aqua;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container h2 {
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .login-container h4 {
+            
+            margin-bottom: 20px;
+            color: #555;
+        }
+        .login-container input {
+            margin-top: 10px;
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .login-container button {
+            width: 90%;
+            padding: 10px;
+            background-color: rgb(74, 177, 177);
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .login-container button:hover {
+            background-color: rgb(47, 93, 93);
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                flex-direction: column; 
+                width: 95%;
+            }
+
+            .image-container {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">        
+        <div class="image-container">
+            
+            <img src="login image.avif" alt="Image Description" style="width: 100%; height: auto; border-radius: 15px;">
+        </div>
+
+        
+        <div class="login-container">
+            <h2>Create an Account</h2>
+            <form>
+                <input type="text" placeholder="Username or Email">
+                <input type="password" placeholder="Password">
+        
+                <!-- Login Button with Navigation -->
+                <a href="loginpage2.html" style="text-decoration: none;">
+                    <button type="button">Login</button>
+                </a>
+            </form>
+            <br>
+            <h4>Already have an account? Log in</h4>
+        </div>
+        
+        
+    </div>
+</body>
+</html>
