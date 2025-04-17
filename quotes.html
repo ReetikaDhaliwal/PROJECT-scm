@@ -3,167 +3,733 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PassItOn Replica</title>
+    <title>Mindset</title>
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #1a1a1a; /* Black background */
-            color: #ffffff; /* White text for contrast */
+            font-family: 'Arial', sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
             display: flex;
             flex-direction: column;
             align-items: center;
+            min-height: 100vh;
         }
 
         header {
             width: 100%;
-            height: 200px; /* Adjust height as needed */
-            background: url('quotes.jpg') no-repeat center center; /* Apply quotes.jpg in header */
-            background-size: cover; /* Ensures the image fills the space */
+            height: 220px;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+            background-size: cover;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             color: white;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-            font-size: 24px;
+            position: relative;
+            padding-top: 30px;
+        }
+
+        .topic-header {
+             width: 100%;
+        height: 500px; /* Adjust height as needed */
+        background: url('backgroung.jpg') no-repeat center center; /* Apply background.jpg in header */
+        background-size: cover; /* Ensures the image fills the space */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add text shadow for readability */
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        background-color: #333333;
+        background: url('backgroung.jpg');
+        }
+
+        .topic-header1 {
+    width: 100%;
+    height: 500px; /* Adjust height as needed */
+    background: url('HAPPY.jpg') no-repeat center center; /* Ensures HAPPY.jpg is centered and doesn't repeat */
+    background-size: cover; /* Makes the image fill the space */
+    display: flex;
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center; /* Centers the content vertically */
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Improves text readability on the image */
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.topic-header2 {
+    width: 100%;
+    height: 500px; /* Adjust height as needed */
+    background: url('3rd.jpg') no-repeat center center; /* Ensures HAPPY.jpg is centered and doesn't repeat */
+    background-size: cover; /* Makes the image fill the space */
+    display: flex;
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center; /* Centers the content vertically */
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Improves text readability on the image */
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+        .flower-decoration {
+            position: absolute;
+            top: 15px;
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+        }
+
+        .header-content {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .header-content h1 {
+            font-size: 2.2rem;
             font-weight: bold;
+            margin: 0;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .header-content p {
+            font-size: 1.1rem;
+            margin: 8px 0 0;
+            color: #f0f0f0;
+            font-style: italic;
         }
 
         .main-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 20px;
-            padding: 20px;
+            gap: 25px;
+            padding: 30px 20px;
             max-width: 1200px;
+            width: 100%;
         }
 
         .grid-item {
-            flex: 1 1 calc(33.33% - 40px); /* 6 items per row */
-            background-color: #333333; /* Dark gray background for cards */
-            border: 1px solid #b30000; /* Red border */
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
+            flex: 0 0 250px;
+            height: 250px;
+            background-color: #333333;
+            border: 2px solid #b30000;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            padding: 18px;
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+            cursor: pointer;
         }
 
         .grid-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(179, 0, 0, 0.5); /* Red shadow on hover */
+            transform: translateY(-8px);
+            box-shadow: 0 8px 16px rgba(179, 0, 0, 0.6);
+            border-color: #ff3333;
         }
 
         .grid-item img {
-            max-width: 100%;
-            border-radius: 10px;
-            margin-bottom: 15px;
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            border: 1px solid #444;
         }
 
         .grid-item h3 {
-            color: #b30000; /* Red text for headings */
-            margin-bottom: 10px;
+            color: #ff4d4d;
+            margin: 8px 0;
+            font-size: 1.2rem;
+            font-weight: 600;
         }
 
         .grid-item p {
-            color: #f2f2f2; /* Light gray for text */
+            color: #f2f2f2;
+            font-size: 0.9rem;
+            margin: 5px 0;
+            line-height: 1.4;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+        
+            -webkit-box-orient: vertical;
+        }
+
+        .back-button {
+            background-color: #b30000;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px 0;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #ff3333;
         }
 
         footer {
             width: 100%;
-            background-color: #b30000; /* Red footer */
+            background-color: #b30000;
             color: white;
             text-align: center;
-            padding: 10px 0;
-            margin-top: 20px;
+            padding: 15px 0;
+            margin-top: auto;
+            font-size: 0.9rem;
         }
 
-        @media (max-width: 768px) {
+        .page {
+            display: none;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .active {
+            display: flex;
+        }
+
+        @media (max-width: 900px) {
             .grid-item {
-                flex: 1 1 calc(50% - 40px); /* 2 items per row on smaller screens */
+                flex: 0 0 calc(50% - 30px);
             }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 600px) {
+            header, .topic-header {
+                height: 180px;
+                padding-top: 20px;
+            }
+            
+            .flower-decoration {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .header-content h1 {
+                font-size: 1.8rem;
+            }
+            
             .grid-item {
-                flex: 1 1 100%; /* 1 item per row on very small screens */
+                flex: 0 0 100%;
+                max-width: 300px;
             }
         }
-        
-                header {
-                    width: 100%;
-                    height: 500px; /* Adjust height as needed */
-                    background: url('backgroung.jpg') no-repeat center center; /* Apply background.jpg in header */
-                    background-size: cover; /* Ensures the image fills the space */
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    color: white;
-                    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add text shadow for readability */
-                    font-size: 24px;
-                    font-weight: bold;
-                    text-align: center;
-                    background-color: #333333;
-                }
-            
-        h1 {
-            margin: 0; /* Removes default margin */
-            font-size: 36px; /* Adjust heading size */
-        }
-
-        h3 {
-            margin: 10px 0 0; /* Adds spacing between h1 and h3 */
-            font-size: 20px; /* Adjust subheading size */
-        }
-            
     </style>
 </head>
 <body>
-    <header>
+    <!-- Home Page -->
+    <div id="home-page" class="page active">
         <header>
-            <div>
-                <h1>FRIENDSHIP</h1>
-                <H3>"Friendship is the golden thread that ties our hearts together with love, trust, and laughter."</H3>
+            <div class="header-content">
+                <h1>Mindset</h1>
+                <p>Spread Inspiration Through Meaningful Quotes</p>
             </div>
         </header>
-        
-    </header>
 
-    <div class="main-container">
-        <!-- Grid Items -->
-        <div class="grid-item">
-            <img src="image1.jpg" alt="Inspiration 1">
-            <h3>Inspiration 1</h3>
-            <p>Motivational quote or description goes here.</p>
-        </div>
-        <div class="grid-item">
-            <img src="image2.jpg" alt="Inspiration 2">
-            <h3>Inspiration 2</h3>
-            <p>Motivational quote or description goes here.</p>
-        </div>
-        <div class="grid-item">
-            <img src="image3.jpg" alt="Inspiration 3">
-            <h3>Inspiration 3</h3>
-            <p>Motivational quote or description goes here.</p>
-        </div>
-        <div class="grid-item">
-            <img src="image4.jpg" alt="Inspiration 4">
-            <h3>Inspiration 4</h3>
-            <p>Motivational quote or description goes here.</p>
-        </div>
-        <div class="grid-item">
-            <img src="image5.jpg" alt="Inspiration 5">
-            <h3>Inspiration 5</h3>
-            <p>Motivational quote or description goes here.</p>
-        </div>
-        <div class="grid-item">
-            <img src="image6.jpg" alt="Inspiration 6">
-            <h3>Inspiration 6</h3>
-            <p>Motivational quote or description goes here.</p>
+        <div class="main-container">
+            <div class="grid-item" data-topic="friendship">
+                <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Friends walking together">
+                <h3>Friendship</h3>
+                <p>"Friendship improves happiness and abates misery, by the doubling of our joy and the dividing of our grief." - Marcus Tullius Cicero</p>
+            </div>
+            
+            <div class="grid-item" data-topic="happiness">
+                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Happy person jumping">
+                <h3>Happiness</h3>
+                <p>"Happiness is not something ready-made. It comes from your own actions." - Dalai Lama</p>
+            </div>
+            
+            <div class="grid-item" data-topic="courage">
+                <img src="https://images.unsplash.com/photo-1454496522480-7a0a0a0a8e9d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Person climbing mountain">
+                <h3>Courage</h3>
+                <p>"Courage doesn't always roar. Sometimes courage is the quiet voice at the end of the day saying, 'I will try again tomorrow.'" — Mary Anne Radmacher</p>
+            </div>
+            
+            <div class="grid-item" data-topic="strength">
+                <img src="https://images.unsplash.com/photo-1470114716159-e389f8712fda?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Powerful wave">
+                <h3>Strength</h3>
+                <p>"You never know how strong you are until being strong is your only choice." — Bob Marley</p>
+            </div>
+            
+            <div class="grid-item" data-topic="growth">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Growing plant">
+                <h3>Growth</h3>
+                <p>"Growth is often painful and scary. There is no growth without change; no change without fear or loss; and no loss without pain." — Unknown</p>
+            </div>
+            
+            <div class="grid-item" data-topic="positivity">
+                <img src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Sunny day">
+                <h3>Positivity</h3>
+                <p>"Keep your face always toward the sunshine—and shadows will fall behind you." — Walt Whitman</p>
+            </div>
         </div>
     </div>
 
-    
+    <!-- Friendship Page -->
+    <div id="friendship-page" class="page">
+        <div class="topic-header" >
+            <div class="header-content">
+                <h1>FRIENDSHIP</h1>
+                <H3>"Friendship is the golden thread that ties our hearts together with love, trust, and laughter."</H3>
+
+            </div>
+        </div>
+
+        <button class="back-button">Back to Home</button>
+
+        <div class="main-container">
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Friends laughing">
+                <h3>Connection</h3>
+                <p>"A real friend is one who walks in when the rest of the world walks out." — Walter Winchell</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Friends hugging">
+                <h3>Support</h3>
+                <p>"The greatest gift of life is friendship, and I have received it." — Hubert H. Humphrey</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Friends walking">
+                <h3>Journey</h3>
+                <p>"A journey is best measured in friends, rather than miles." — Tim Cahill</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Friends high-fiving">
+                <h3>Trust</h3>
+                <p>"The language of friendship is not words but meanings." — Henry David Thoreau</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1516575334481-f85287c2c82d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Friends sitting together">
+                <h3>Time</h3>
+                <p>"Growing apart doesn't change the fact that for a long time we grew side by side." — Shel Silverstein</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Friends laughing">
+                <h3>Laughter</h3>
+                <p>"A good friend is like a four-leaf clover: hard to find and lucky to have." — Irish Proverb</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1522573089778-73e5e39e592b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Friends at sunset">
+                <h3>Loyalty</h3>
+                <p>"Friendship is the only cement that will ever hold the world together." — Woodrow Wilson</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Friends around campfire">
+                <h3>Memory</h3>
+                <p>"No distance of place or lapse of time can lessen the friendship of those who are thoroughly persuaded of each other's worth." — Robert Southey</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Old friends">
+                <h3>Forever</h3>
+                <p>"A friend is someone who knows all about you and still loves you." — Elbert Hubbard</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Happiness Page -->
+    <div id="happiness-page" class="page">
+        <div class="topic-header1">
+            <div class="header-content">
+                <h1>Happiness</h1>
+                <p>Finding joy in everyday moments</p>
+            </div>
+        </div>
+
+        <button class="back-button">Back to Home</button>
+
+        <div class="main-container">
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1495031115160-d30f52511d0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Smiling person">
+                <h3>Joy</h3>
+                <p>"The most important thing is to enjoy your life—to be happy—it's all that matters." — Audrey Hepburn</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1534073828952-ec7daed98626?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Happy child">
+                <h3>Simplicity</h3>
+                <p>"Happiness is a direction, not a place." — Sydney J. Harris</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1519834785169-98be25ec3f84?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Happy couple">
+                <h3>Love</h3>
+                <p>"The happiness of your life depends upon the quality of your thoughts." — Marcus Aurelius</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1533227268428-f9ed0900fb3b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Happy person">
+                <h3>Gratitude</h3>
+                <p>"Happiness is not a goal; it is a by-product." — Eleanor Roosevelt</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Laughing person">
+                <h3>Laughter</h3>
+                <p>"Happiness is a warm puppy." — Charles M. Schulz</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1504131598085-b9fa5e4c3526?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Beach happiness">
+                <h3>Peace</h3>
+                <p>"If you want to be happy, be." — Leo Tolstoy</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1523301343968-6a6ebf63c672?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Happy dance">
+                <h3>Freedom</h3>
+                <p>"Happiness is letting go of what you think your life is supposed to look like and celebrating it for everything that it is." — Mandy Hale</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1520880867055-1e30d1cb001c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Meditation">
+                <h3>Mindfulness</h3>
+                <p>"The present moment is filled with joy and happiness. If you are attentive, you will see it." — Thich Nhat Hanh</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1499364615650-ec38552f4f34?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Happy family">
+                <h3>Connection</h3>
+                <p>"Happiness is only real when shared." — Christopher McCandless</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Courage Page -->
+    <div id="courage-page" class="page">
+        <div class="topic-header2">
+            <div class="header-content">
+                <h1>Courage</h1>
+                <p>Facing fear with strength and determination</p>
+            </div>
+        </div>
+
+        <button class="back-button">Back to Home</button>
+
+        <div class="main-container">
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1530939027401-cca9088ab601?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Mountain climber">
+                <h3>Bravery</h3>
+                <p>"Courage is not the absence of fear, but rather the assessment that something else is more important than fear." — Franklin D. Roosevelt</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Cliff jumping">
+                <h3>Risk</h3>
+                <p>"You can't be brave if you've only had wonderful things happen to you." — Mary Tyler Moore</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Standing tall">
+                <h3>Resilience</h3>
+                <p>"Success is not final, failure is not fatal: it is the courage to continue that counts." — Winston Churchill</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Strong person">
+                <h3>Strength</h3>
+                <p>"Courage is resistance to fear, mastery of fear, not absence of fear." — Mark Twain</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1526649661456-89c7ed4d00b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Facing storm">
+                <h3>Adversity</h3>
+                <p>"He who is not courageous enough to take risks will accomplish nothing in life." — Muhammad Ali</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1507034589631-9433cc6bc453?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Marathon runner">
+                <h3>Endurance</h3>
+                <p>"Courage is like a muscle. We strengthen it by use." — Ruth Gordon</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Speaking up">
+                <h3>Voice</h3>
+                <p>"Speak your mind even if your voice shakes." — Maggie Kuhn</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1515898913320-f38370edab7a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Starting new">
+                <h3>Beginning</h3>
+                <p>"It takes courage to grow up and become who you really are." — E.E. Cummings</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1519834785169-98be25ec3f84?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Leading the way">
+                <h3>Leadership</h3>
+                <p>"Courage is what it takes to stand up and speak; courage is also what it takes to sit down and listen." — Winston Churchill</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Strength Page -->
+    <div id="strength-page" class="page">
+        <div class="topic-header" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;">
+            <div class="header-content">
+                <h1>Strength</h1>
+                <p>Finding power within yourself</p>
+            </div>
+        </div>
+
+        <button class="back-button">Back to Home</button>
+
+        <div class="main-container">
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Strong woman">
+                <h3>Power</h3>
+                <p>"Strength does not come from physical capacity. It comes from an indomitable will." — Mahatma Gandhi</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Weightlifting">
+                <h3>Determination</h3>
+                <p>"The world breaks everyone, and afterward, some are strong at the broken places." — Ernest Hemingway</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1525498128493-380d1990a112?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Strong hands">
+                <h3>Resilience</h3>
+                <p>"That which does not kill us makes us stronger." — Friedrich Nietzsche</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Strong woman">
+                <h3>Spirit</h3>
+                <p>"You have power over your mind—not outside events. Realize this, and you will find strength." — Marcus Aurelius</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1520810627419-35e362c5dc07?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Strong woman portrait">
+                <h3>Courage</h3>
+                <p>"The strongest people are not those who show strength in front of us but those who win battles we know nothing about." — Unknown</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Sunrise yoga">
+                <h3>Balance</h3>
+                <p>"Sometimes you don't realize your own strength until you come face to face with your greatest weakness." — Susan Gale</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1528716321680-815a8cdb8cbe?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Rising above">
+                <h3>Endurance</h3>
+                <p>"Strength and growth come only through continuous effort and struggle." — Napoleon Hill</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Standing tall">
+                <h3>Faith</h3>
+                <p>"Being deeply loved by someone gives you strength, while loving someone deeply gives you courage." — Lao Tzu</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1516534775068-ba3e7458af70?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Rising from ashes">
+                <h3>Recovery</h3>
+                <p>"Where there is no struggle, there is no strength." — Oprah Winfrey</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Growth Page -->
+    <div id="growth-page" class="page">
+        <div class="topic-header" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1470115636492-6d2b56f9146d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;">
+            <div class="header-content">
+                <h1>Growth</h1>
+                <p>Evolving and becoming better every day</p>
+            </div>
+        </div>
+
+        <button class="back-button">Back to Home</button>
+
+        <div class="main-container">
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1470115636492-6d2b56f9146d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Growing plant">
+                <h3>Evolution</h3>
+                <p>"The greatest glory in living lies not in never falling, but in rising every time we fall." — Nelson Mandela</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Seedling">
+                <h3>Beginnings</h3>
+                <p>"Growth begins when we start to accept our own weakness." — Jean Vanier</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1457530378978-8bac673b8062?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Mountain journey">
+                <h3>Journey</h3>
+                <p>"Don't go through life, grow through life." — Eric Butterworth</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1496449903678-68ddcb189a24?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Reading">
+                <h3>Learning</h3>
+                <p>"Change is the end result of all true learning." — Leo Buscaglia</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1485550409059-9afb054cada4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Transformation">
+                <h3>Transformation</h3>
+                <p>"We can't become what we need to be by remaining what we are." — Oprah Winfrey</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1505816014357-96b5ff457e9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="New horizons">
+                <h3>Expansion</h3>
+                <p>"Life is growth. If we stop growing, technically and spiritually, we are as good as dead." — Morihei Ueshiba</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1531379410502-63bfe8cdaf6f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Breaking limits">
+                <h3>Challenges</h3>
+                <p>"All growth starts at the end of your comfort zone." — Tony Robbins</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1493612276216-ee3925520721?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Goal setting">
+                <h3>Goals</h3>
+                <p>"Without continual growth and progress, such words as improvement, achievement, and success have no meaning." — Benjamin Franklin</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Time passage">
+                <h3>Time</h3>
+                <p>"Growth is the only evidence of life." — John Henry Newman</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Positivity Page -->
+    <div id="positivity-page" class="page">
+        <div class="topic-header" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1496449903678-68ddcb189a24?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;">
+            <div class="header-content">
+                <h1>Positivity</h1>
+                <p>Embracing the bright side of life</p>
+            </div>
+        </div>
+
+        <button class="back-button">Back to Home</button>
+
+        <div class="main-container">
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1534438097545-a2c22c57f2ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Sunrise">
+                <h3>Optimism</h3>
+                <p>"Keep your face always toward the sunshine—and shadows will fall behind you." — Walt Whitman</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Beach sunset">
+                <h3>Hope</h3>
+                <p>"Once you choose hope, anything's possible." — Christopher Reeve</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1531299204812-e6d44d9a185c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Gratitude">
+                <h3>Gratitude</h3>
+                <p>"Gratitude turns what we have into enough." — Anonymous</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1464820453369-31d2c0b651af?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Rainbow">
+                <h3>Perspective</h3>
+                <p>"In the middle of difficulty lies opportunity." — Albert Einstein</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Positive person">
+                <h3>Mindset</h3>
+                <p>"A positive attitude causes a chain reaction of positive thoughts, events, and outcomes." — Wade Boggs</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Smiling fox">
+                <h3>Joy</h3>
+                <p>"Joy does not simply happen to us. We have to choose joy and keep choosing it every day." — Henri Nouwen</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Happy person">
+                <h3>Attitude</h3>
+                <p>"Your attitude, not your aptitude, will determine your altitude." — Zig Ziglar</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Bright light">
+                <h3>Brightness</h3>
+                <p>"Darkness cannot drive out darkness: only light can do that." — Martin Luther King Jr.</p>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Spreading positivity">
+                <h3>Influence</h3>
+                <p>"Positive anything is better than negative nothing." — Elbert Hubbard</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Mindset - Inspirational Quotes | Made with ❤
+    </footer>
+
+    <script>
+        // Get all grid items and back buttons
+        const gridItems = document.querySelectorAll('.grid-item[data-topic]');
+        const backButtons = document.querySelectorAll('.back-button');
+        
+        // Add click event to all grid items
+        gridItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const topic = item.getAttribute('data-topic');
+                showPage(topic);
+            });
+        });
+        
+        // Add click event to all back buttons
+        backButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                showPage('home');
+            });
+        });
+        
+        // Function to show specific page
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId + '-page').classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+    </script>
 </body>
 </html>
 
@@ -172,10 +738,3 @@
 
 
 
-<!-- Inspiration
-motivatiobal
-friendship
-life
-positive
-knowlege -->
-<!-- happiness -->
