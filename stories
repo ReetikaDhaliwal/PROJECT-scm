@@ -106,3 +106,11 @@
       <p>True, life-affirming stories of hope, kindness, and humanity. #PassItOn</p>
     </div>
   </header>
+<section class="content-section">
+    <div class="story-card">
+      <img src="https://assets.passiton.com/articles/photos/medium/164_Shakespeare_and_Love_PassItOn.jpg" alt="Story Image" />
+      <div class="story-content">
+        <h3>Changing Course in Life</h3>
+        <p>Peter Pretorius, stranded in Mozambique during a famine, created a way to give back instead of fleeing.</p>
+      </div>
+    </div>
