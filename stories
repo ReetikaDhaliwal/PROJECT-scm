@@ -67,10 +67,6 @@
       object-fit: cover;
     }
 
-    .story-content {
-      padding: 1.5rem;
-    }
-
     .story-content h3 {
       font-size: 1.2rem;
       color: #ff4b5c;
