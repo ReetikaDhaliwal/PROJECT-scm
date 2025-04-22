@@ -163,3 +163,13 @@
         <p>Neighbors transform a vacant lot into a thriving community garden.</p>
       </div>
     </div>
+<div class="story-card">
+      <img src="https://www.rd.com/wp-content/uploads/2021/03/GettyImages-1209969659-1.jpg" alt="Story Image" />
+      <div class="story-content">
+        <h3>Smile Chain</h3>
+        <p>A single act of kindness sparks a chain of smiles across a city.</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
