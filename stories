@@ -128,3 +128,10 @@
         <p>Jon Bon Jovi rolls up his sleeves to help feed communities in need at his JBJ Soul Kitchen.</p>
       </div>
     </div>
+    <div class="story-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvIF9uGchVBgQhoT_YC6djy4f-fBRuwl6TSw&s" alt="Story Image" />
+      <div class="story-content">
+        <h3>Classroom Hero</h3>
+        <p>A teacher's act of kindness changed the life of a troubled student forever.</p>
+      </div>
+    </div>
