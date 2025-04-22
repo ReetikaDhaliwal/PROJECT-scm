@@ -22,3 +22,22 @@
       color: #ff4b5c;
       text-decoration: underline;
     }
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(https://png.pngtree.com/thumb_back/fw800/background/20240923/pngtree-a-beautiful-flower-in-full-bloom-against-black-background-the-petals-image_16242573.jpg) no-repeat center center/cover;
+      height: 65vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .content-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      justify-content: center;
+    }
