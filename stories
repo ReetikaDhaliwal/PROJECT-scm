@@ -142,3 +142,10 @@
         <p>Teens and seniors bond through storytelling, showing age is just a number.</p>
       </div>
     </div>
+    <div class="story-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0OGDeCy2ghNnRL87wvuUXMuNd9ZCt72uFfw&s" alt="Story Image" />
+      <div class="story-content">
+        <h3>Paws of Hope</h3>
+        <p>An animal shelter worker goes above and beyond to save abandoned pets.</p>
+      </div>
+    </div>
