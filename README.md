@@ -5,3 +5,6 @@ A beautiful single-page application featuring curated inspirational quotes acros
 
 ## ✨ Features
 - **6 Thematic Categories**: Friendship, Happiness, Courage, Strength, Growth, Positivity
+- **Interactive UI**: 
+  - Click any category to view related quotes
+  - Smooth back-to-home navigation
