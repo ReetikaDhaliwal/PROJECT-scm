@@ -375,12 +375,66 @@
         height: 300px; /* Match mobile height */
     }
 }
+/* Reset browser defaults */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Full-width navbar */
+.navbar {
+    width: 100%;
+    background-color: #b30000; /* Red color */
+    padding: 15px 0; /* Vertical padding only */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Center links with max-width */
+.nav-links {
+    display: flex;
+    justify-content: center; /* Center items */
+    gap: 40px; /* Spacing between items */
+    max-width: 1200px; /* Match your content width */
+    margin: 0 auto;
+    padding: 0 20px; /* Horizontal padding */
+}
+
+/* Link styling */
+.nav-item {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.nav-item:hover {
+    background-color: #8a0000; /* Darker red */
+    transform: translateY(-2px);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 20px;
+        padding: 0 10px;
+        justify-content: flex-start; /* Left-align on mobile */
+        overflow-x: auto; /* Allow horizontal scrolling if needed */
+    }
+    .nav-item {
+        font-size: 16px;
+        padding: 6px 10px;
+    }
+}
 
     </style>
 </head>
 <body>    
     
-    <nav class="navbar">
+    <nav class="navbar"> 
         <div class="nav-links">
           <a href="school.html">Schools</a>
           <a href="quotes.html">Quotes</a>
