@@ -48,6 +48,21 @@
   .navbar a:hover {
     color: #ddd;
   }
+  .main-container {
+    display: flex; /* Show by default */
+    /* other styles */
+}
+
+.page {
+    display: none; /* Hide all pages by default */
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page.active {
+    display: flex; /* Show active page */
+}
 
         header {
             width: 100%;
@@ -308,6 +323,7 @@
             }
             
         }
+        
     </style>
 </head>
 <body>    
@@ -316,11 +332,9 @@
         <div class="nav-links">
           <a href="school.html">Schools</a>
           <a href="quotes.html">Quotes</a>
-          <a href="stories.html">Stories</a>
+          <a href="stories.html">Stories</a> 
         </div>
       </nav>
-      <img src="mindset.jpg" style="height: 500px; width: 100%; object-fit: cover;">
-    
         <div class="main-container">
             <div class="grid-item" data-topic="friendship">
                 <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Friends walking together">
@@ -358,6 +372,7 @@
                 <p>"Keep your face always toward the sunshine—and shadows will fall behind you." — Walt Whitman</p>
             </div>
         </div>
+
     </div>
 
     <!-- Friendship Page -->
@@ -366,7 +381,6 @@
             <div class="header-content">
                 <h1>FRIENDSHIP</h1>
                 <H3>"Friendship is the golden thread that ties our hearts together with love, trust, and laughter."</H3>
-
             </div>
         </div>
 
@@ -917,28 +931,49 @@
                 showPage(topic);
             });
         });
-        
-        // Add click event to all back buttons
-        backButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                showPage('home');
-            });
-        });
-        
+          
         // Function to show specific page
+        // Function to handle page navigation
         function showPage(pageId) {
-            // Hide all pages
+            // Hide home page and all other pages
+            document.getElementById('home-page').style.display = 'none';
             document.querySelectorAll('.page').forEach(page => {
-                page.classList.remove('active');
+                page.style.display = 'none';
             });
             
-            // Show selected page
-            document.getElementById(pageId + '-page').classList.add('active');
-            
-            // Scroll to top
+            // Show the requested page
+            document.getElementById(pageId + '-page').style.display = 'flex';
             window.scrollTo(0, 0);
         }
-    </script>
+        
+        // Function to return home
+        function showHome() {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.style.display = 'none';
+            });
+            
+            // Show home page
+            document.getElementById('home-page').style.display = 'flex';
+            window.scrollTo(0, 0);
+        }
+        
+        // Initialize click handlers when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click handlers to all category cards
+            document.querySelectorAll('.grid-item[data-topic]').forEach(item => {
+                item.addEventListener('click', function() {
+                    const topic = this.getAttribute('data-topic');
+                    showPage(topic);
+                });
+            });
+            
+            // Add click handler to all back buttons
+            document.querySelectorAll('.back-button').forEach(button => {
+                button.addEventListener('click', showHome);
+            });
+        });
+        </script>
     <!--Footer-->
     <footer class="bg-[#111111] bg-opacity-0 text-white font-sans text-sm mt-auto">
         <div class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
