@@ -323,7 +323,25 @@
             }
             
         }
-        
+        /* Page Visibility Control */
+.home-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page {
+    display: none; /* Hidden by default */
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Ensure smooth transitions */
+.page, #home-page {
+    transition: opacity 0.3s ease;
+}
+
     </style>
 </head>
 <body>    
