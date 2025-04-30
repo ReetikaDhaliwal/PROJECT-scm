@@ -8,3 +8,7 @@ A beautiful single-page application featuring curated inspirational quotes acros
 - **Interactive UI**: 
   - Click any category to view related quotes
   - Smooth back-to-home navigation
+  - **Elegant Design**:
+  - Full-width header images
+  - Responsive card grid layout
+  - Hover animations
