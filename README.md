@@ -12,3 +12,4 @@ A beautiful single-page application featuring curated inspirational quotes acros
   - Full-width header images
   - Responsive card grid layout
   - Hover animations
+  - **Mobile-First**: Perfectly adapted for all devices
