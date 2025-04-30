@@ -1,0 +1,57 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ "main" ]  # Runs on pushes to main branch
+  pull_request:           # Runs on PRs (for validation)
+    branches: [ "main" ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write     # Required for deployment
+      pages: write
+      id-token: write
+
+    steps:
+      # Checkout code
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Validate HTML
+      - name: Validate HTML
+        uses: validator/validator@v0.3
+        with:
+          url: "./index.html"
+
+      # Install dependencies (if needed)
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      # Build step (optional - customize if using a static site generator)
+      - name: Build 
+        run: |
+          echo "No build step needed for pure HTML/CSS/JS"
+          # For projects using npm: npm install && npm run build
+
+      # Deploy to GitHub Pages
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./            # Publishes from root
+          keep_files: false          # Clean old files
+          enable_jekyll: false       # Disable Jekyll processing
+
+  # Post-deploy status check
+  report-status:
+    needs: build-and-deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show deployment URL
+        run: |
+          echo "🚀 Your site is now live at:"
+          echo "https://${{ github.repository_owner }}.github.io/${{ github.repository }}"
